@@ -1,7 +1,7 @@
 """Markdown file parsing utilities for link extraction and replacement."""
 
-from pathlib import Path
 import re
+from pathlib import Path
 
 
 def get_files(directory):
@@ -22,7 +22,7 @@ def get_md_links(md_file_path: list):
 
     for file in md_file_path:
         try:
-            with open(file, "r", encoding="utf-8") as md:
+            with open(file, encoding="utf-8") as md:
                 content = md.read()
                 matches = re.findall(pattern, content)
                 for text, url in matches:
@@ -37,7 +37,7 @@ def get_md_links(md_file_path: list):
 def replace_link(md_file_path, bad_links):
     """Replace bad links with their text content in markdown files."""
     try:
-        with open(md_file_path, "r", encoding="utf-8") as f:
+        with open(md_file_path, encoding="utf-8") as f:
             content = f.read()
 
         # Apply all replacements
@@ -55,3 +55,4 @@ def replace_link(md_file_path, bad_links):
     except Exception as e:
         print(f"Error updating {md_file_path}: {e}")
         return False
+
