@@ -16,7 +16,7 @@ pip install link-sweep
 ### From Source
 
 ```bash
-git clone https://github.com/real-keiro/link-sweep.git
+git clone https://github.com/real-kiero/link-sweep.git
 cd link-sweep
 pip install -e .
 ```
